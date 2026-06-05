@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/dakgg/go_grpc/proto/auth";
+
+package game;
+
+message LoginRequest
+{
+    string publickey = 1;
+    string privateKey = 2;
+}
+
+message LoginResponse {
+  bool success = 1;
+  string game_state = 2;
+}
+
+service GameService {
+    rpc Login(LoginRequest) returns (LoginResponse);
+}
