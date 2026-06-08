@@ -8,6 +8,7 @@ import (
 	"google.golang.org/grpc/reflection"
 
 	gameservice "github.com/dakgg/go_grpc/server/internal/game"
+	"github.com/dakgg/go_grpc/server/internal/interceptor"
 	pb "github.com/dakgg/go_grpc/server/proto"
 )
 
@@ -17,7 +18,7 @@ func main() {
 		log.Fatalf("포트 열기 실패: %v", err)
 	}
 
-	s := grpc.NewServer()
+	s := grpc.NewServer(grpc.UnaryInterceptor(interceptor.Logging))
 	pb.RegisterGameServiceServer(s, &gameservice.GameServer{})
 
 	reflection.Register(s)
