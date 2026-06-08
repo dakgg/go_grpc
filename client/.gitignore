@@ -1,6 +1,8 @@
 
-/Library/
+Library/
 Temp/
+Logs/
+
 *.csproj
 .vscode/
 
