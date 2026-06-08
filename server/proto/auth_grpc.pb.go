@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	GameService_Login_FullMethodName = "/game.GameService/Login"
+	GameService_Login_FullMethodName = "/dakg.GameService/Login"
 )
 
 // GameServiceClient is the client API for GameService service.
@@ -108,7 +108,7 @@ func _GameService_Login_Handler(srv interface{}, ctx context.Context, dec func(i
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GameService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "game.GameService",
+	ServiceName: "dakg.GameService",
 	HandlerType: (*GameServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

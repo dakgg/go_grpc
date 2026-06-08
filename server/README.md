@@ -25,14 +25,14 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 `server/` 디렉토리에서 실행:
 
 ```bash
-protoc --go_out=. --go_opt=paths=source_relative \
-       --go-grpc_out=. --go-grpc_opt=paths=source_relative \
-       proto/auth.proto
+./generate_proto.sh
 ```
 
+C# 코드 생성에는 `grpc_csharp_plugin`이 필요합니다 (`brew install grpc`로 설치).
+
 생성되는 파일:
-- `proto/auth.pb.go` — 메시지 타입
-- `proto/auth_grpc.pb.go` — 서비스 인터페이스 및 클라이언트
+- `proto/*.pb.go`, `proto/*_grpc.pb.go` — Go 메시지 타입 및 서비스 인터페이스 (server)
+- `../client/Assets/Scripts/Proto/*.cs` — C# 메시지 타입 및 서비스 인터페이스 (Unity client)
 
 ---
 

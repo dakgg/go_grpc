@@ -129,7 +129,7 @@ var File_proto_auth_proto protoreflect.FileDescriptor
 
 const file_proto_auth_proto_rawDesc = "" +
 	"\n" +
-	"\x10proto/auth.proto\x12\x04game\"L\n" +
+	"\x10proto/auth.proto\x12\x04dakg\"L\n" +
 	"\fLoginRequest\x12\x1c\n" +
 	"\tpublickey\x18\x01 \x01(\tR\tpublickey\x12\x1e\n" +
 	"\n" +
@@ -140,7 +140,7 @@ const file_proto_auth_proto_rawDesc = "" +
 	"\n" +
 	"game_state\x18\x02 \x01(\tR\tgameState2?\n" +
 	"\vGameService\x120\n" +
-	"\x05Login\x12\x12.game.LoginRequest\x1a\x13.game.LoginResponseB%Z#github.com/dakgg/go_grpc/proto/authb\x06proto3"
+	"\x05Login\x12\x12.dakg.LoginRequest\x1a\x13.dakg.LoginResponseB%Z#github.com/dakgg/go_grpc/proto/authb\x06proto3"
 
 var (
 	file_proto_auth_proto_rawDescOnce sync.Once
@@ -156,12 +156,12 @@ func file_proto_auth_proto_rawDescGZIP() []byte {
 
 var file_proto_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_auth_proto_goTypes = []any{
-	(*LoginRequest)(nil),  // 0: game.LoginRequest
-	(*LoginResponse)(nil), // 1: game.LoginResponse
+	(*LoginRequest)(nil),  // 0: dakg.LoginRequest
+	(*LoginResponse)(nil), // 1: dakg.LoginResponse
 }
 var file_proto_auth_proto_depIdxs = []int32{
-	0, // 0: game.GameService.Login:input_type -> game.LoginRequest
-	1, // 1: game.GameService.Login:output_type -> game.LoginResponse
+	0, // 0: dakg.GameService.Login:input_type -> dakg.LoginRequest
+	1, // 1: dakg.GameService.Login:output_type -> dakg.LoginResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
