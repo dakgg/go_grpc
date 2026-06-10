@@ -1,5 +1,6 @@
 
 
+using System;
 using System.Threading.Tasks;
 using Cysharp.Net.Http;
 using Dakg;
@@ -23,9 +24,11 @@ public class AuthService
 
     public async Task<LoginResponse> Login()
     {
-        LoginRequest req = new();
+        LoginRequest req = new()
+        {
+            Publickey = "haha"
+        };
         var result = await _client.LoginAsync(req);
         return result; ;
     }
-
 }

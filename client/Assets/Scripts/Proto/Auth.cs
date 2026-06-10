@@ -24,16 +24,15 @@ namespace Dakg {
     static AuthReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBwcm90by9hdXRoLnByb3RvEgRkYWtnIjUKDExvZ2luUmVxdWVzdBIRCglw",
-            "dWJsaWNrZXkYASABKAkSEgoKcHJpdmF0ZUtleRgCIAEoCSI0Cg1Mb2dpblJl",
-            "c3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSEgoKZ2FtZV9zdGF0ZRgCIAEoCTI/",
-            "CgtHYW1lU2VydmljZRIwCgVMb2dpbhISLmRha2cuTG9naW5SZXF1ZXN0GhMu",
-            "ZGFrZy5Mb2dpblJlc3BvbnNlQiVaI2dpdGh1Yi5jb20vZGFrZ2cvZ29fZ3Jw",
-            "Yy9wcm90by9hdXRoYgZwcm90bzM="));
+            "ChBwcm90by9hdXRoLnByb3RvEgRkYWtnIiEKDExvZ2luUmVxdWVzdBIRCglw",
+            "dWJsaWNrZXkYASABKAkiNAoNTG9naW5SZXNwb25zZRIPCgdzdWNjZXNzGAEg",
+            "ASgIEhIKCmdhbWVfc3RhdGUYAiABKAkyPwoLR2FtZVNlcnZpY2USMAoFTG9n",
+            "aW4SEi5kYWtnLkxvZ2luUmVxdWVzdBoTLmRha2cuTG9naW5SZXNwb25zZUIl",
+            "WiNnaXRodWIuY29tL2Rha2dnL2dvX2dycGMvcHJvdG8vYXV0aGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Dakg.LoginRequest), global::Dakg.LoginRequest.Parser, new[]{ "Publickey", "PrivateKey" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Dakg.LoginRequest), global::Dakg.LoginRequest.Parser, new[]{ "Publickey" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Dakg.LoginResponse), global::Dakg.LoginResponse.Parser, new[]{ "Success", "GameState" }, null, null, null, null)
           }));
     }
@@ -77,7 +76,6 @@ namespace Dakg {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginRequest(LoginRequest other) : this() {
       publickey_ = other.publickey_;
-      privateKey_ = other.privateKey_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,18 +97,6 @@ namespace Dakg {
       }
     }
 
-    /// <summary>Field number for the "privateKey" field.</summary>
-    public const int PrivateKeyFieldNumber = 2;
-    private string privateKey_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PrivateKey {
-      get { return privateKey_; }
-      set {
-        privateKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -127,7 +113,6 @@ namespace Dakg {
         return true;
       }
       if (Publickey != other.Publickey) return false;
-      if (PrivateKey != other.PrivateKey) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,7 +121,6 @@ namespace Dakg {
     public override int GetHashCode() {
       int hash = 1;
       if (Publickey.Length != 0) hash ^= Publickey.GetHashCode();
-      if (PrivateKey.Length != 0) hash ^= PrivateKey.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -159,10 +143,6 @@ namespace Dakg {
         output.WriteRawTag(10);
         output.WriteString(Publickey);
       }
-      if (PrivateKey.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(PrivateKey);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -177,10 +157,6 @@ namespace Dakg {
         output.WriteRawTag(10);
         output.WriteString(Publickey);
       }
-      if (PrivateKey.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(PrivateKey);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -193,9 +169,6 @@ namespace Dakg {
       int size = 0;
       if (Publickey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Publickey);
-      }
-      if (PrivateKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PrivateKey);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,9 +184,6 @@ namespace Dakg {
       }
       if (other.Publickey.Length != 0) {
         Publickey = other.Publickey;
-      }
-      if (other.PrivateKey.Length != 0) {
-        PrivateKey = other.PrivateKey;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -238,10 +208,6 @@ namespace Dakg {
             Publickey = input.ReadString();
             break;
           }
-          case 18: {
-            PrivateKey = input.ReadString();
-            break;
-          }
         }
       }
     #endif
@@ -263,10 +229,6 @@ namespace Dakg {
             break;
           case 10: {
             Publickey = input.ReadString();
-            break;
-          }
-          case 18: {
-            PrivateKey = input.ReadString();
             break;
           }
         }
