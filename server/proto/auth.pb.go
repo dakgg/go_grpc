@@ -24,7 +24,6 @@ const (
 type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Publickey     string                 `protobuf:"bytes,1,opt,name=publickey,proto3" json:"publickey,omitempty"`
-	PrivateKey    string                 `protobuf:"bytes,2,opt,name=privateKey,proto3" json:"privateKey,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -62,13 +61,6 @@ func (*LoginRequest) Descriptor() ([]byte, []int) {
 func (x *LoginRequest) GetPublickey() string {
 	if x != nil {
 		return x.Publickey
-	}
-	return ""
-}
-
-func (x *LoginRequest) GetPrivateKey() string {
-	if x != nil {
-		return x.PrivateKey
 	}
 	return ""
 }
@@ -129,12 +121,9 @@ var File_proto_auth_proto protoreflect.FileDescriptor
 
 const file_proto_auth_proto_rawDesc = "" +
 	"\n" +
-	"\x10proto/auth.proto\x12\x04dakg\"L\n" +
+	"\x10proto/auth.proto\x12\x04dakg\",\n" +
 	"\fLoginRequest\x12\x1c\n" +
-	"\tpublickey\x18\x01 \x01(\tR\tpublickey\x12\x1e\n" +
-	"\n" +
-	"privateKey\x18\x02 \x01(\tR\n" +
-	"privateKey\"H\n" +
+	"\tpublickey\x18\x01 \x01(\tR\tpublickey\"H\n" +
 	"\rLoginResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x1d\n" +
 	"\n" +

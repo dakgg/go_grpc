@@ -7,7 +7,6 @@ package dakg;
 message LoginRequest
 {
     string publickey = 1;
-    string privateKey = 2;
 }
 
 message LoginResponse {
